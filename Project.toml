@@ -1,7 +1,7 @@
 name = "FiniteElements2dDirichlet"
 uuid = "246d098e-0122-4565-9ee7-68b1dc4e7a2c"
 authors = ["João Victor Lopez Pereira"]
-version = "1.0.1-DEV"
+version = "1.0.2-DEV"
 
 [deps]
 GaussQuadrature = "d54b0c1a-921d-58e0-8e36-89d8069c0969"
@@ -12,7 +12,7 @@ SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 [compat]
 GaussQuadrature = "0.5.8"
 Plots = "1.40.9"
-julia = "1.6.7"
+julia = "1.11.1"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
