@@ -2,6 +2,8 @@
 
 This repository contains a solver of a 2D ordinary differential equation by using the finite elements method.
 
+Let $\Omega \subset \mathbb{R}^2$, $\Gamma$ be the border of $\Omega$, $\hat{\Omega} = \Gamma \union \Omega$, and $\Delta u(x,y) = u_{xx}(x) + u_{yy}(x)$.
+
 Given $\alpha > 0$, $\beta \geq 0$ and a function $f : \Omega \to \mathbb{R}$, this system finds $u : \hat{\Omega} \to \mathbb{R}$ such that:
 
 $$
