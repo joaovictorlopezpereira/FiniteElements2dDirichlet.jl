@@ -13,11 +13,13 @@ Mutates a given matrix `Ke` with dimensions `4×4` to become the local K matrix.
 - `W::Vector{Float64}`: vector of gauss weights for numerical integration.
 
 # Examples
-```julia-repl
-julia> Ke = zeros(4,4)
-julia> P, W = legendre(5)
-julia> init_Ke_matrix!(6, 0, [0, 0.25, 0.25, 0], [0, 0, 0.25, 0.25], Ke, P, W)
-julia> Ke
+```jldoctest
+using GaussQuadrature
+Ke = zeros(4,4);
+P, W = legendre(5);
+init_Ke_matrix!(6, 0, [0, 0.25, 0.25, 0], [0, 0, 0.25, 0.25], Ke, P, W);
+Ke;
+# output
 4×4 Matrix{Float64}:
   4.0  -1.0  -2.0  -1.0
  -1.0   4.0  -1.0  -2.0

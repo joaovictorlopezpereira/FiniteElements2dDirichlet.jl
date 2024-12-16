@@ -12,11 +12,13 @@ Mutates a given vector `Fe` with length `4` to become the local `Fe` vector.
 - `W::Vector{Float64}`: vector of gauss weights for numerical integration.
 
 # Examples
-```julia-repl
-julia> Fe = zeros(4)
-julia> P, W = legendre(5)
-julia> init_Fe_vector!((x1, x2) -> 64, [0, 0.25, 0.25, 0], [0, 0, 0.25, 0.25], Fe, P, W)
-julia> Fe
+```jldoctest
+using GaussQuadrature
+Fe = zeros(4);
+P, W = legendre(5);
+init_Fe_vector!((x1, x2) -> 64, [0, 0.25, 0.25, 0], [0, 0, 0.25, 0.25], Fe, P, W);
+Fe;
+# output
 4-element Vector{Float64}:
  0.9999999999999993
  0.9999999999999998

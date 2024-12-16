@@ -15,7 +15,7 @@ function evaluated in the inner knots of the mesh.
 - `noise::Bool`: indicates if noise should be added to the mesh.
 
 # Examples
-```julia-repl
+```jldoctest
 julia> solve_system(1, 1, (x, y) -> (2*pi^2 +1)*sin(pi*x)*sin(pi*y), 2, 3)
 2-element Vector{Float64}:
  1.0040408191040564

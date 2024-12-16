@@ -10,7 +10,7 @@ The size of the matrix is `4×Nx*Ny`
 - `Ny::Integer`: the number of elements in the y axis.
 
 # Examples
-```julia-repl
+```jldoctest
 julia> init_LG_matrix(2, 4)
 4×8 Matrix{Int64}:
  1  2  4  5   7   8  10  11

@@ -2,6 +2,13 @@ using FiniteElements2dDirichlet
 using LinearAlgebra
 using Test
 using GaussQuadrature
+using Documenter
+
+DocMeta.setdocmeta!(FiniteElements2dDirichlet, :DocTestSetup, :(using FiniteElements2dDirichlet); recursive=true)
+
+#---doctests---
+doctest(FiniteElements2dDirichlet; manual=false)
+#---doctests---
 
 #---tests---
 include("LG_tests.jl")

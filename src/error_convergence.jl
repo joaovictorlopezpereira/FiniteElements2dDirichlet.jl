@@ -1,7 +1,7 @@
 """
     error_convergence(lb, ub, alpha, beta, u, f; see_plot=false, ns=false)
 
-return the errors of a given solution for discretizations with knots ranging from `2^lb` to `2^ub`.
+Return the errors of a given solution for discretizations with knots ranging from `2^lb` to `2^ub`.
 The number of knots increases in powers of 2, starting from `2^lb` up to `2^ub`.
 
 # Arguments
@@ -15,7 +15,7 @@ The number of knots increases in powers of 2, starting from `2^lb` up to `2^ub`.
 - `ns::Bool`: indicates if noise should be added to the mesh.
 
 # Examples
-```julia-repl
+```jldoctest
 julia> error_convergence(2, 4, 1, 1, (x,y) -> sin(pi * x) * sin(pi * y), (x,y) -> (2*pi^2 + 1) * sin(pi * x) * sin(pi * y))
 3-element Vector{Float64}:
  0.02946436125614044

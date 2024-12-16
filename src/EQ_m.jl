@@ -10,7 +10,7 @@ The size of the vector is `Nx+1*Ny+1` and `m` is `(Nx-1)*(Ny-1)`.
 - `Ny::Integer`: the number of elements in the y axis.
 
 # Examples
-```julia-repl
+```jldoctest
 julia> init_EQ_vector_and_m(2, 5)
 ([5, 5, 5, 5, 1, 5, 5, 2, 5, 5, 3, 5, 5, 4, 5, 5, 5, 5], 4)
 ```
