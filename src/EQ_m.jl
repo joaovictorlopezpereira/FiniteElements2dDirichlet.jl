@@ -16,27 +16,27 @@ julia> init_EQ_vector_and_m(2, 5)
 ```
 """
 function init_EQ_vector_and_m(Nx, Ny)
-  m = (Nx - 1) * (Ny - 1)
-  EQ = zeros(Int, Ny+1, Nx+1)
+    m = (Nx - 1) * (Ny - 1)
+    EQ = zeros(Int, Ny+1, Nx+1)
 
-  # Initialize the border elements
-  for i in 1:Nx+1
-    EQ[1,i] = m + 1
-    EQ[Ny+1, i] = m + 1
-  end
-  for j in 1:Ny+1
-    EQ[j, 1] = m+1
-    EQ[j, Nx+1] = m+1
-  end
-
-  # initialize the within elements
-  k = 1
-  for i in 2:Ny
-    for j in 2:Nx
-      EQ[i,j] = k
-      k = k + 1
+    # Initialize the border elements
+    for i in 1:Nx+1
+        EQ[1,i] = m + 1
+        EQ[Ny+1, i] = m + 1
     end
-  end
+    for j in 1:Ny+1
+        EQ[j, 1] = m+1
+        EQ[j, Nx+1] = m+1
+    end
 
-  return cat(EQ'..., dims=1), m
+    # initialize the within elements
+    k = 1
+    for i in 2:Ny
+        for j in 2:Nx
+            EQ[i,j] = k
+            k = k + 1
+        end
+    end
+
+    return cat(EQ'..., dims=1), m
 end

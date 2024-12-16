@@ -27,17 +27,17 @@ julia> init_F_vector((x1, x2) -> 48, X, Y, m, EQ, LG)
 ```
 """
 function init_F_vector(f, X_matrix, Y_matrix, m, EQ, LG)
-  ne = size(LG, 2) # assuming we are using a LG (4 x ne)
-  F = zeros(m+1)
-  Fe = zeros(4)
-  P, W = legendre(5)
+    ne = size(LG, 2) # assuming we are using a LG (4 x ne)
+    F = zeros(m+1)
+    Fe = zeros(4)
+    P, W = legendre(5)
 
-  for e in 1:ne
-    init_Fe_vector!(f, X_matrix[LG[:,e]], Y_matrix[LG[:,e]], Fe, P, W)
-    for a in 1:4
-      F[EQ[LG[a,e]]] += Fe[a]
+    for e in 1:ne
+        init_Fe_vector!(f, X_matrix[LG[:,e]], Y_matrix[LG[:,e]], Fe, P, W)
+        for a in 1:4
+            F[EQ[LG[a,e]]] += Fe[a]
+        end
     end
-  end
 
-  return F[1: end-1]
+    return F[1: end-1]
 end

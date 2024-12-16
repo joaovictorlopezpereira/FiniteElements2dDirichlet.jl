@@ -26,38 +26,38 @@ julia> Ke
 ```
 """
 function init_Ke_matrix!(alpha, beta, Xs, Ys, Ke, P, W)
-  fill!(Ke, 0)
+    fill!(Ke, 0)
 
-  J_det = (xi1, xi2) -> abs(
-    d_xi_x[1][1](xi1, xi2, Xs) * d_xi_x[2][2](xi1, xi2, Ys) -
-    d_xi_x[1][2](xi1, xi2, Xs) * d_xi_x[2][1](xi1, xi2, Ys)
-  )
+    J_det = (xi1, xi2) -> abs(
+      d_xi_x[1][1](xi1, xi2, Xs) * d_xi_x[2][2](xi1, xi2, Ys) -
+      d_xi_x[1][2](xi1, xi2, Xs) * d_xi_x[2][1](xi1, xi2, Ys)
+    )
 
-  H = (xi1, xi2) -> [
-     d_xi_x[2][2](xi1, xi2, Ys)   -d_xi_x[2][1](xi1, xi2, Ys);
-    -d_xi_x[1][2](xi1, xi2, Xs)    d_xi_x[1][1](xi1, xi2, Xs)
-  ]
+    H = (xi1, xi2) -> [
+      d_xi_x[2][2](xi1, xi2, Ys)   -d_xi_x[2][1](xi1, xi2, Ys);
+      -d_xi_x[1][2](xi1, xi2, Xs)    d_xi_x[1][1](xi1, xi2, Xs)
+    ]
 
-  for i in 1:length(W)
-    Wi, Pi = W[i], P[i]
-    for j in 1:length(W)
-      Wj, Pj = W[j], P[j]
-      det_J = J_det(Pj, Pi)
-      det_J_inv = 1 / det_J
-      H_P = H(Pj, Pi)
-      HTH = H_P' * H_P
-      phi_vals = [phi[a](Pj, Pi) for a in 1:4]
-      d_xi_phi_vals = [[d_xi_phi[1][a](Pj, Pi); d_xi_phi[2][a](Pj, Pi)] for a in 1:4]
+    for i in 1:length(W)
+        Wi, Pi = W[i], P[i]
+        for j in 1:length(W)
+            Wj, Pj = W[j], P[j]
+            det_J = J_det(Pj, Pi)
+            det_J_inv = 1 / det_J
+            H_P = H(Pj, Pi)
+            HTH = H_P' * H_P
+            phi_vals = [phi[a](Pj, Pi) for a in 1:4]
+            d_xi_phi_vals = [[d_xi_phi[1][a](Pj, Pi); d_xi_phi[2][a](Pj, Pi)] for a in 1:4]
 
-      for a in 1:4
-        grad_a = d_xi_phi_vals[a]
-        aux = HTH * grad_a * det_J_inv * alpha
+            for a in 1:4
+                grad_a = d_xi_phi_vals[a]
+                aux = HTH * grad_a * det_J_inv * alpha
 
-        for b in 1:4
-          grad_b = d_xi_phi_vals[b]
-          Ke[a, b] += Wi * Wj * ((grad_b' * aux) +  beta * phi_vals[b] * phi_vals[a] * det_J)
+                for b in 1:4
+                    grad_b = d_xi_phi_vals[b]
+                    Ke[a, b] += Wi * Wj * ((grad_b' * aux) +  beta * phi_vals[b] * phi_vals[a] * det_J)
+                end
+            end
         end
-      end
     end
-  end
 end

@@ -26,21 +26,21 @@ julia> init_K_matrix(1, 1, X, Y, m, EQ, LG)
 ```
 """
 function init_K_matrix(alpha, beta, X_matrix, Y_matrix, m, EQ, LG)
-  ne = size(LG, 2) # assuming we are using a LG (4 x ne)
-  K = spzeros(m+1, m+1)
-  Ke = zeros(4, 4)
-  P, W = legendre(5)
+    ne = size(LG, 2) # assuming we are using a LG (4 x ne)
+    K = spzeros(m+1, m+1)
+    Ke = zeros(4, 4)
+    P, W = legendre(5)
 
-  for e in 1:ne
-    init_Ke_matrix!(alpha, beta, X_matrix[LG[:,e]], Y_matrix[LG[:,e]], Ke, P, W)
-    for b in 1:4
-      j = EQ[LG[b, e]]
-      for a in 1:4
-        i = EQ[LG[a, e]]
-        K[i,j] += Ke[a,b]
-      end
+    for e in 1:ne
+        init_Ke_matrix!(alpha, beta, X_matrix[LG[:,e]], Y_matrix[LG[:,e]], Ke, P, W)
+        for b in 1:4
+            j = EQ[LG[b, e]]
+            for a in 1:4
+                i = EQ[LG[a, e]]
+                K[i,j] += Ke[a,b]
+            end
+        end
     end
-  end
 
-  return K[1:m, 1:m]
+    return K[1:m, 1:m]
 end

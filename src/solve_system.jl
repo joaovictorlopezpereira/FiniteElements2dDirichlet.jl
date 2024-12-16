@@ -23,11 +23,11 @@ julia> solve_system(1, 1, (x, y) -> (2*pi^2 +1)*sin(pi*x)*sin(pi*y), 2, 3)
 ```
 """
 function solve_system(alpha, beta, f, Nx, Ny; EQLG=false, XY_matrix=false, noise=false)
-  X_matrix, Y_matrix = init_mesh(Nx, Ny, ns=noise)
-  EQ, m = init_EQ_vector_and_m(Nx, Ny)
-  LG = init_LG_matrix(Nx, Ny)
-  K = init_K_matrix(alpha, beta, X_matrix, Y_matrix, m, EQ, LG)
-  F = init_F_vector(f, X_matrix, Y_matrix, m, EQ, LG)
-  C = K \ F
-  return EQLG ? XY_matrix ? (C, EQ, LG, X_matrix, Y_matrix) : (C, EQ, LG) : XY_matrix ? (C, X_matrix, Y_matrix) : C
+    X_matrix, Y_matrix = init_mesh(Nx, Ny, ns=noise)
+    EQ, m = init_EQ_vector_and_m(Nx, Ny)
+    LG = init_LG_matrix(Nx, Ny)
+    K = init_K_matrix(alpha, beta, X_matrix, Y_matrix, m, EQ, LG)
+    F = init_F_vector(f, X_matrix, Y_matrix, m, EQ, LG)
+    C = K \ F
+    return EQLG ? XY_matrix ? (C, EQ, LG, X_matrix, Y_matrix) : (C, EQ, LG) : XY_matrix ? (C, X_matrix, Y_matrix) : C
 end
