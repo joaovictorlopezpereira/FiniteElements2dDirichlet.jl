@@ -8,13 +8,13 @@ Let:
   - $\Omega = [0,1] \times [0,1] \subset \mathbb{R}^2$;
   - $\Gamma$ be the border of $\Omega$;
   - $\hat{\Omega} = \Gamma \cup \Omega$;
-  - $\Delta u(x,y) = u_{xx}(x) + u_{yy}(x)$.
+  - $\Delta u(x,y) = u_{xx}(x,y) + u_{yy}(x,y)$.
 
 Given $\alpha > 0$, $\beta \geq 0$ and a function $f : \Omega \to \mathbb{R}$, this system finds $u : \hat{\Omega} \to \mathbb{R}$ such that:
 
 $$
 \begin{cases}
-  -\alpha \Delta u(x, y) + \beta u(x, y) = f(x, y) & \forall (x,y) \in \Omega \\
+  -\alpha \Delta u(x,y) + \beta u(x,y) = f(x,y) & \forall (x,y) \in \Omega \\
   \\
   u(x,y) = 0 & \forall (x,y) \in \Gamma.
 \end{cases}
