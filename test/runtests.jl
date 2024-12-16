@@ -31,6 +31,13 @@ using GaussQuadrature
     @test norm(Ke - [0.72 0.11 0.06 -0.39; 0.11 1.72 -0.39 -0.94; 0.06 -0.39 0.72 0.11; -0.39 -0.94 0.11 1.72]) < 0.1
 #---Ke---
 
+#---K---
+    X, Y = init_mesh(2,2)
+    EQ, m = init_EQ_vector_and_m(2,2)
+    LG = init_LG_matrix(2,2)
+    @test norm(init_K_matrix(1, 1, X, Y, m, EQ, LG) - [2.71 -0.32 -0.32 -0.33; -0.32 2.71 -0.33 -0.32; -0.32 -0.33 2.72 -0.32; -0.33 -0.32 -0.32 2.72]) < 0.1
+#---K---
+
 #---Fe---
     # Initializing Fe
     Fe = zeros(4)
