@@ -32,9 +32,9 @@ using GaussQuadrature
 #---Ke---
 
 #---K---
-    X, Y = init_mesh(2,2)
-    EQ, m = init_EQ_vector_and_m(2,2)
-    LG = init_LG_matrix(2,2)
+    X, Y = init_mesh(3,3)
+    EQ, m = init_EQ_vector_and_m(3,3)
+    LG = init_LG_matrix(3,3)
     @test norm(init_K_matrix(1, 1, X, Y, m, EQ, LG) - [2.71 -0.32 -0.32 -0.33; -0.32 2.71 -0.33 -0.32; -0.32 -0.33 2.72 -0.32; -0.33 -0.32 -0.32 2.72]) < 0.1
 #---K---
 

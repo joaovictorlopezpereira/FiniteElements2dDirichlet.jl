@@ -66,7 +66,7 @@ julia> init_LG_matrix(2, 4)
 ```
 """
 function init_LG_matrix(Nx, Ny)
-  LG = fill(0, (4, Nx1 * Ny))
+  LG = fill(0, (4, Nx * Ny))
   j = 0
 
   for i in 1:Nx*Ny
