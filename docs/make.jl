@@ -1,10 +1,10 @@
-# Adiciona o caminho relativo ao diretório `src` no LOAD_PATH
+# Adds the path to the package to the load_path
 push!(LOAD_PATH, "/home/joao_pereira/FiniteElements2dDirichlet.jl/src/")
 
 using Documenter
 using FiniteElements2dDirichlet
 
-# Configura e gera a documentação
+# Generates the documentation
 makedocs(
     sitename = "FiniteElements2dDirichlet.jl",
 )
