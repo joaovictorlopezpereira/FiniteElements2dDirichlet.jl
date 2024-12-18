@@ -20,6 +20,9 @@ julia> init_LG_matrix(2, 4)
 ```
 """
 function init_LG_matrix(Nx, Ny)
+    @assert Nx > 0 "Nx must be a positive integer"
+    @assert Ny > 0 "Ny must be a positive integer"
+
     LG = fill(0, (4, Nx * Ny))
     j = 0
 

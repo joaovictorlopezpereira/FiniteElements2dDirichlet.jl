@@ -15,6 +15,9 @@ julia> init_mesh(2, 3)
 ([0.0 0.0 0.0 0.0; 0.5 0.5 0.5 0.5; 1.0 1.0 1.0 1.0], [0.0 0.3333333333333333 0.6666666666666666 1.0; 0.0 0.3333333333333333 0.6666666666666666 1.0; 0.0 0.3333333333333333 0.6666666666666666 1.0])```
 """
 function init_mesh(Nx, Ny; ns=false, plot=false)
+    @assert Nx > 0 "Nx must be a positive integer"
+    @assert Ny > 0 "Ny must be a positive integer"
+
     x1 = collect(0: 1/Nx :1)
     x2 = collect(0: 1/Ny :1)
 

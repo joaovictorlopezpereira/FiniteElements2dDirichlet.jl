@@ -24,6 +24,9 @@ julia> error_convergence(2, 4, 1, 1, (x,y) -> sin(pi * x) * sin(pi * y), (x,y) -
 ```
 """
 function error_convergence(lb, ub, alpha, beta, u, f; see_plot=false, ns=false)
+    @assert lb > 0 "lb must be a positive integer"
+    @assert ub > 0 "ub must be a positive integer"
+    @assert ub > lb "ub must be bigger than lb"
 
     # Compute the error of a system given C
     function gauss_error(u, C, X_matrix, Y_matrix, EQ, LG)

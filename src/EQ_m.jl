@@ -16,6 +16,8 @@ julia> init_EQ_vector_and_m(2, 5)
 ```
 """
 function init_EQ_vector_and_m(Nx, Ny)
+    @assert Nx > 0 "Nx must be a positive integer"
+    @assert Ny > 0 "Ny must be a positive integer"
     m = (Nx - 1) * (Ny - 1)
     EQ = zeros(Int, Ny+1, Nx+1)
 
