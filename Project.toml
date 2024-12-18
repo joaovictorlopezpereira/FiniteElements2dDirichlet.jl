@@ -1,7 +1,7 @@
 name = "FiniteElements2dDirichlet"
 uuid = "246d098e-0122-4565-9ee7-68b1dc4e7a2c"
 authors = ["João Victor Lopez Pereira"]
-version = "1.0.2"
+version = "1.0.1"
 
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
