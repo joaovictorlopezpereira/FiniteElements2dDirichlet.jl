@@ -20,7 +20,6 @@ $$
 \end{cases}
 $$
 
-Some of the calculations used in this implementation can be found at [Two Dimensional Analysis and Calculations](https://github.com/joaovictorlopezpereira/Finite-Elements-Method/blob/main/Analysis%20and%20Calculations/two-dim.pdf).
-
+More information about the package and the mathematical formulation can be found at the ``index.html`` file in ``/docs/build``.
 
 [![Build Status](https://github.com/joaovictorlopezpereira/FiniteElements2dDirichlet.jl/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/joaovictorlopezpereira/FiniteElements2dDirichlet.jl/actions/workflows/CI.yml?query=branch%3Amaster)
