@@ -25,6 +25,7 @@ jobs:
         version:
           - '1.11'
           - 'pre'
+          - '1.6'
         os:
           - ubuntu-latest
         arch:
