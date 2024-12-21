@@ -1,8 +1,12 @@
 # FiniteElements2dDirichlet
 
-This repository contains a solver for a 2D ordinary differential equation using the finite element method.
+## Information About the Package
+
+This repository contains a solver for a 2D partial differential equation using the finite element method.
 
 In this case, we are solving a two-dimensional stationary equation with homogeneous Dirichlet boundary conditions.
+
+## Equation Being Solved by the Package
 
 Let:
   - $\Omega = [0,1] \times [0,1] \subset \mathbb{R}^2$;
@@ -21,5 +25,9 @@ $$
 $$
 
 More information about the package and the mathematical formulation can be found at the ``index.html`` file in ``/docs/build``.
+
+## The Future of the Package
+
+At this moment, the package solves only a single equation. In the future, it is planned to extend its capabilities to solve multiple equations, allowing the same functions to be used across different equations.
 
 [![Build Status](https://github.com/joaovictorlopezpereira/FiniteElements2dDirichlet.jl/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/joaovictorlopezpereira/FiniteElements2dDirichlet.jl/actions/workflows/CI.yml?query=branch%3Amaster)
