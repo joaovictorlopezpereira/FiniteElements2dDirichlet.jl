@@ -6,6 +6,8 @@ This repository contains a solver for a 2D partial differential equation using t
 
 In this case, we are solving a two-dimensional stationary equation with homogeneous Dirichlet boundary conditions.
 
+-----
+
 ## Equation Being Solved by the Package
 
 Let:
@@ -25,6 +27,8 @@ $$
 $$
 
 More information about the package and the mathematical formulation can be found at the ``index.html`` file in ``/docs/build``.
+
+-----
 
 ## The Future of the Package
 
