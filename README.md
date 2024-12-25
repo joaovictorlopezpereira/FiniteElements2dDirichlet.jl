@@ -21,7 +21,7 @@ Given $\alpha > 0$, $\beta \geq 0$ and a function $f : \Omega \to \mathbb{R}$, t
 $$
 \begin{cases}
   -\alpha \Delta u(x,y) + \beta u(x,y) = f(x,y) & \forall (x,y) \in \Omega \\
-  \\
+  \\ \\
   u(x,y) = 0 & \forall (x,y) \in \Gamma.
 \end{cases}
 $$
