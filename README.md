@@ -1,6 +1,6 @@
 # FiniteElements2dDirichlet
 
-## Information About the Package
+## Description
 
 This repository contains a solver for a 2D partial differential equation using the finite element method.
 
@@ -35,3 +35,4 @@ More information about the package and the mathematical formulation can be found
 At this moment, the package solves only the 2d stationary problem with homogeneous Dirichlet boundary conditions. In the future, it is planned to extend its capabilities to solve more problems/systems, allowing the same functions to be used across different equations.
 
 [![Build Status](https://github.com/joaovictorlopezpereira/FiniteElements2dDirichlet.jl/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/joaovictorlopezpereira/FiniteElements2dDirichlet.jl/actions/workflows/CI.yml?query=branch%3Amaster)
+
